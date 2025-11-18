@@ -14,16 +14,22 @@
         {id:'l3',title:'JavaScript Primer',dur:20,content:'Get comfortable with variables (let/const), types, functions, conditionals, loops, and DOM selection/manipulation (querySelector, addEventListener). Make a button that toggles dark mode.'}
       ],enrolled:['u1'],progress:{u1:45}},
 
-      // C Language (text content only)
+      // C Language (expanded text-only course)
       {id:'c_c',title:'C Programming – Foundations',instructor:'Learnly Team',tags:['C','Systems','Pointers'],lessons:[
-        {id:'l1',title:'Getting Started with C',dur:12,content:'Install a compiler (gcc/clang). Learn file structure, main function, headers, include stdio.h, and how to compile and run using gcc file.c -o app && ./app.'},
-        {id:'l2',title:'Data Types and Operators',dur:14,content:'Primitive types (char, int, float, double), signed vs unsigned, arithmetic and logical operators. Understand integer division and type conversion.'},
-        {id:'l3',title:'Control Flow',dur:12,content:'if/else, switch, while, do-while, for loops. Practice by computing factorials and sums.'},
-        {id:'l4',title:'Functions and Scope',dur:15,content:'Declare and define functions, pass by value, header prototypes, and scope rules (block vs file scope).'},
-        {id:'l5',title:'Arrays and Strings',dur:16,content:'Static arrays, iteration, C strings (null-terminated), common pitfalls, and using functions like strlen, strcpy, strcmp safely.'},
-        {id:'l6',title:'Pointers 101',dur:18,content:'Addresses, dereferencing, pointer arithmetic, arrays vs pointers, and passing pointers to functions to modify values.'},
-        {id:'l7',title:'Dynamic Memory',dur:18,content:'malloc, calloc, realloc, free. Avoid memory leaks and double frees. Build a dynamic array example.'},
-        {id:'l8',title:'Structs and Files',dur:16,content:'Define structs, nested structs, and read/write files with fopen, fprintf, fscanf, fclose. Create a small contacts file.'}
+        {id:'l01',title:'Introduction & First Program',dur:14,content:'Why C? Portable, small runtime, close to hardware. Use it for systems, embedded, and performance-critical code.\n\nYour first program (hello.c):\n\n#include <stdio.h>\n\nint main(void) {\n    printf("Hello, C!\\n");\n    return 0;\n}\n\nCompile and run:\n- gcc hello.c -o hello\n- ./hello\n\nLine-by-line:\n- #include <stdio.h> brings in printf declaration.\n- main is the program entry point.\n- return 0 signals success.'},
+        {id:'l02',title:'Compiling, Linking, and Tooling',dur:12,content:'Stages: preprocessing (#includes, macros) → compilation (to .o) → linking (combine objects, libraries).\nCommon commands:\n- gcc -E file.c > file.i (preprocess)\n- gcc -c file.c (compile to object)\n- gcc file.o -o app (link)\nUse -Wall -Wextra -Werror to catch issues early.'},
+        {id:'l03',title:'Data Types and Operators',dur:14,content:'Primitive types: char, short, int, long, float, double. Signed vs unsigned.\nOperators: + - * / % (integer division!), && || !, bitwise (& | ^ ~ << >>).\nCasts: (double) x, implicit promotions. Be mindful of overflow.'},
+        {id:'l04',title:'Input and Output (printf/scanf)',dur:16,content:'printf format specifiers: %d (int), %ld (long), %f (double), %c (char), %s (string), %p (pointer).\nscanf needs pointers: int a; scanf("%d", &a);\nBuffering and newline behavior. Avoid unsafe gets; prefer fgets for strings.'},
+        {id:'l05',title:'Control Flow',dur:12,content:'if/else, switch (with break), while, do-while, for.\nExamples: compute factorial, sum of array, print a multiplication table.\nUse continue and break thoughtfully.'},
+        {id:'l06',title:'Functions and Scope',dur:15,content:'Declare prototypes before use; define once.\nParameters are passed by value; use pointers to modify caller data.\nStorage duration: auto (stack), static (lifetime of program), extern (external linkage).'},
+        {id:'l07',title:'Arrays and Strings',dur:16,content:'int a[5] = {1,2,3,4,5}; Index from 0 to n-1.\nC-strings are null-terminated char arrays: char s[16] = "cat";\nSafer functions: strncpy, strncat, snprintf. Always reserve space for the null byte.'},
+        {id:'l08',title:'Pointers 101',dur:18,content:'Take addresses with & and dereference with *.\nExample: int x = 5; int *p = &x; *p = 7; // x becomes 7\nPointers to arrays, pointer arithmetic, and const-correctness (const int *p vs int *const p).'},
+        {id:'l09',title:'Dynamic Memory (malloc/free)',dur:18,content:'Use malloc/calloc/realloc to get heap memory. Always check for NULL and free what you allocate.\nExample: int *arr = malloc(n * sizeof *arr); if(!arr) return 1; ... free(arr);\nAvoid memory leaks, double free, and use-after-free.'},
+        {id:'l10',title:'Strings Deep Dive',dur:16,content:'Implement strlen and strcpy manually to understand loops and null terminators.\nUse size-aware variants (strncpy, strnlen). Be wary of off-by-one errors.'},
+        {id:'l11',title:'Structs, Enums, and Unions',dur:16,content:'Group data with struct. Tag states with enum. Save space with union when variants share memory.\ntypedef struct { int id; char name[32]; } User;\nUse dot (.) and arrow (->) for field access depending on pointer or value.'},
+        {id:'l12',title:'File I/O',dur:16,content:'fopen, fclose, fprintf, fscanf, fgets, fputs, fread/fwrite for binary.\nError handling with perror and errno.\nMini task: append a line to a text file and then read it back.'},
+        {id:'l13',title:'Preprocessor and Header Files',dur:14,content:'#define, #ifdef/#ifndef, #include.\nCreate a header (util.h) with function prototypes and a source (util.c) with implementations.\nUse include guards or #pragma once to avoid redefinition.'},
+        {id:'l14',title:'Modular Programs and Makefiles',dur:14,content:'Split code into multiple .c files, compile to .o, then link.\nBasic Makefile:\n\nCC=gcc\nCFLAGS=-Wall -Wextra -O2\n\napp: main.o util.o\n\t$(CC) $(CFLAGS) -o app main.o util.o\n\n%.o: %.c\n\t$(CC) $(CFLAGS) -c $<\n\nClean with make clean (add a rule to rm -f *.o app).'}
       ],enrolled:[],progress:{}},
 
       // C++ Language

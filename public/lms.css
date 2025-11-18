@@ -1,0 +1,56 @@
+/* Learnly LMS — Pure HTML/CSS/JS styles */
+:root{
+  --bg:#0b1220;--panel:#0f172a;--panel-2:#111827;--muted:#94a3b8;--text:#e5e7eb;--brand:#60a5fa;--accent:#34d399;--warn:#f59e0b;--danger:#ef4444;--ring:rgba(96,165,250,.35);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:radial-gradient(1200px 800px at 80% -10%,rgba(96,165,250,.08),transparent),linear-gradient(180deg,#0b1220,#0b1220 60%,#0f172a);color:var(--text);font:16px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+
+.container{width:min(1100px,92%);margin-inline:auto}
+.topbar{position:sticky;top:0;background:rgba(11,18,32,.65);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid rgba(148,163,184,.15);z-index:10}
+.topbar__inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;gap:10px;align-items:center;font-weight:700}
+.brand__logo{font-size:22px}
+.brand__name{letter-spacing:.2px}
+.nav{display:flex;gap:14px}
+.nav__link{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+.nav__link:hover{color:var(--text);background:rgba(148,163,184,.08)}
+.nav__link--muted{opacity:.7}
+
+.footer{border-top:1px solid rgba(148,163,184,.15);margin-top:36px}
+.footer__inner{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:20px 0;color:var(--muted)}
+
+.panel{background:linear-gradient(180deg,rgba(148,163,184,.08),rgba(148,163,184,.04));border:1px solid rgba(148,163,184,.18);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:18px}
+.panel--soft{background:rgba(148,163,184,.06)}
+.grid{display:grid;gap:16px}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.grid--3{grid-template-columns:1fr}}
+
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:22px 0 12px}
+.h1{font-size:28px;margin:0 0 6px}
+.muted{color:var(--muted)}
+
+.card{background:linear-gradient(180deg,#0f172a,#111827);border:1px solid rgba(148,163,184,.15);border-radius:16px;padding:16px;transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(2,6,23,.4)}
+.card__title{font-weight:600;margin:0 0 8px}
+.card__meta{font-size:12px;color:var(--muted)}
+
+.btn{appearance:none;border:none;border-radius:10px;padding:10px 14px;font-weight:600;color:#0b1220;background:var(--brand);box-shadow:0 10px 20px var(--ring);cursor:pointer}
+.btn:hover{filter:brightness(1.05)}
+.btn--ghost{background:transparent;color:var(--text);border:1px solid rgba(148,163,184,.2)}
+.btn--ghost:hover{background:rgba(148,163,184,.08)}
+.btn--danger{background:var(--danger);color:white}
+.input,.select,textarea{width:100%;background:rgba(148,163,184,.08);border:1px solid rgba(148,163,184,.25);color:var(--text);padding:10px 12px;border-radius:10px;outline:none}
+.input:focus,.select:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0 0 4px var(--ring)}
+.row{display:flex;gap:12px}
+.row--between{justify-content:space-between}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.2);padding:6px 10px;border-radius:999px;font-size:12px}
+.list{display:flex;flex-direction:column;gap:12px}
+.progress{height:8px;background:rgba(148,163,184,.15);border-radius:999px;overflow:hidden}
+.progress__bar{height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));width:0%}
+.empty{padding:36px 16px;text-align:center;color:var(--muted)}
+.badge{font-size:11px;padding:4px 8px;border-radius:8px;background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.35);color:#86efac}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:10px 8px;border-bottom:1px solid rgba(148,163,184,.16);text-align:left}
+.table th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em}

@@ -3,16 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flames App</title>
-    <link rel="icon" type="image/x-icon" href="favicon.svg">
+    <title>Learnly — Lightweight LMS (HTML/CSS/JS)</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%231e293b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19.5V6.8a2 2 0 0 1 1.2-1.84l5.6-2.5a2 2 0 0 1 1.6 0l5.6 2.5A2 2 0 0 1 20 6.8v12.7a1 1 0 0 1-1.45.9L12 18l-6.55 2.4A1 1 0 0 1 4 19.5Z'/%3E%3Cpath d='M12 18V4'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/lms.css">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="brand">
+          <span class="brand__logo">🎓</span>
+          <span class="brand__name">Learnly</span>
+        </div>
+        <nav class="nav" id="main-nav">
+          <a href="#/" class="nav__link" data-link>Home</a>
+          <a href="#/courses" class="nav__link" data-link>Courses</a>
+          <a href="#/learning" class="nav__link" data-link>My Learning</a>
+          <a href="#/admin" class="nav__link nav__link--muted" data-link>Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" id="app-root" aria-live="polite"></main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>Built with plain HTML, CSS, and JavaScript. Data persists in your browser.</p>
+        <button id="resetBtn" class="btn btn--ghost">Reset demo data</button>
+      </div>
+    </footer>
+
+    <script src="/lms.js" defer></script>
   </body>
 </html>
